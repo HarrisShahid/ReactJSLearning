@@ -1,11 +1,17 @@
 // import logo from './logo.svg';
 import { useState } from 'react';
 import './App.css';
-// import About from './compnents/About';
+import About from './compnents/About';
 import Navbar from './compnents/Navbar';
 import TextForm from './compnents/TextForm';
 import Alert from './compnents/Alert';
 import { ToastContainer, toast } from 'react-toastify';
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  Link
+} from "react-router-dom";
 
 
 function App() {
@@ -44,6 +50,7 @@ function App() {
   }
   return (
     <>
+    <Router>
     <Navbar
      person={{ 
           name: 'Harris', 
@@ -54,9 +61,15 @@ function App() {
          />
          <Alert alerts = {alerts}/>
          <div className="container my-3">
-        <TextForm heading = "Enter the text  to analyze" mode={mode} showAlert = {showAlert} showToast = {showToast} />
-        
          </div>
+         <Routes>
+            <Route path='/about' element = {<About/>} >
+            </Route>
+            <Route path='/home'
+            element = {<TextForm heading = "Enter the text  to analyze" mode={mode} showAlert = {showAlert} showToast = {showToast} />}>
+            </Route>
+         </Routes>
+         </Router>
     </>
   );
 }
