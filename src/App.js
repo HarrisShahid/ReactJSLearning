@@ -1,4 +1,5 @@
 // import logo from './logo.svg';
+//Hooks
 import { useState } from 'react';
 import './App.css';
 import About from './compnents/About';

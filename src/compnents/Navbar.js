@@ -20,7 +20,6 @@ function Navbar(props) {
           <Link className="nav-link active" to="./about">About</Link>
         </li>
       </ul>
-      <label className="form-check-label" onClick={props.toggleMode} htmlFor="flexSwitchCheckDefault">Green</label>
       <form className="d-flex" role="search">
         {/* <input className="form-control me-2" type="search" placeholder="Search" aria-label="Search"/> */}
         {/* <button className="btn btn-success mx-2" type="submit">Search</button> */}
